@@ -21,6 +21,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="README.md"/>
     <File Name="Udp2Mqtt.cpp"/>
     <File Name="Udp.cpp"/>
     <File Name="Timer.cpp"/>
