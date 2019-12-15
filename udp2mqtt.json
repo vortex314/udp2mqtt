@@ -1,6 +1,6 @@
 {
 "mqtt":{
-	"host":"test.mosquitto.org",
+	"host":"pi3.local",
 	"port":1883,
 	"keepAliveInterval":20
 	},

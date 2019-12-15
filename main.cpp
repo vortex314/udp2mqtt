@@ -74,6 +74,7 @@ int main(int argc, char **argv) {
 		auto got = receivers.find(fromAddress);
 		if (  got == receivers.end()) {
 			auto receiver = new Udp2Mqtt(udp,fromAddress,fromPort);
+			receiver->setConfig(config);
 			receiver->init();
 			char hostName[100];
 			inet_ntop(AF_INET,&fromAddress,hostName,sizeof(hostName));

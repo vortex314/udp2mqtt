@@ -126,7 +126,6 @@ void Udp2Mqtt::run() {
 					}
 				case UDP_RXD: {
 						DEBUG("UDP_RXD");
-						if ( _outgoing.size()==0) WARN("[%X] no buffered messages found",this);
 						if(_outgoing.size()) {
 							auto udpMsg = _outgoing.front();
 							_outgoing.pop_front();
