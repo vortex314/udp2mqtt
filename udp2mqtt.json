@@ -1,0 +1,11 @@
+{
+"mqtt":{
+	"host":"test.mosquitto.org",
+	"port":1883,
+	"keepAliveInterval":20
+	},
+"udp" : {
+	"port":1883,
+	"protocol":"jsonArray"
+	}
+}
