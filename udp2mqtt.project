@@ -26,8 +26,6 @@
     <File Name="Udp.cpp"/>
     <File Name="Timer.cpp"/>
     <File Name="Sys.cpp"/>
-    <File Name="MqttUdp.cpp"/>
-    <File Name="MqttUdp.h"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">

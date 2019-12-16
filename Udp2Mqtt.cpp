@@ -20,7 +20,6 @@ const char* signalString[] = {"PIPE_ERROR",
                               "TIMEOUT"
                              };
 
-#define USB() logger.application(_serialPort.c_str())
 
 Udp2Mqtt::Udp2Mqtt(Udp& udp,in_addr_t ip,uint16_t port)
 	: _jsonDocument(),_udp(udp) {
@@ -64,11 +63,14 @@ void Udp2Mqtt::init() {
 	_config.get("willMessage", _mqttWillMessage, "false");
 	_mqttWillQos = 0;
 	_mqttWillRetained = false;
-	_mqttDevice = Sys::hostname();
 	_mqttDevice+=".";
-	_mqttDevice+= _ipAsString;
+	_mqttDevice = _ipAsString;
+	_mqttDevice+="@";
+	_mqttDevice += Sys::hostname();
+
 	_mqttSubscribedTo = "dst/" + _mqttDevice + "/#";
-	_mqttClientId = _mqttDevice + std::to_string(getpid());
+	_mqttClientId = _mqttDevice ;
+	INFO(" Mqtt client id : %s ", _mqttClientId.c_str());
 	std::string willTopicDefault = "src/" + _mqttDevice + "/Udp2Mqtt/alive";
 	_config.get("willTopic", _mqttWillTopic, willTopicDefault.c_str());
 
@@ -83,7 +85,7 @@ void Udp2Mqtt::init() {
 
 }
 
-void Udp2Mqtt::threadFunction(void* pv) { run(); }
+//void Udp2Mqtt::threadFunction(void* pv) { run(); }
 
 void Udp2Mqtt::run() {
 	string line;
@@ -92,7 +94,7 @@ void Udp2Mqtt::run() {
 	Timer mqttPublishTimer;
 	Timer serialTimer;
 
-	mqttConnectTimer.atInterval(2000).doThis([this]() {
+	mqttConnectTimer.atInterval(3000).doThis([this]() {
 		if(_mqttConnectionState != MS_CONNECTING) {
 			mqttConnect();
 		}
@@ -102,9 +104,9 @@ void Udp2Mqtt::run() {
 	});
 	mqttPublishTimer.atInterval(1000).doThis([this]() {
 		std::string sUpTime = std::to_string((Sys::millis() - _startTime) / 1000);
-		mqttPublish("src/" + _mqttDevice + "/Udp2Mqtt/alive", "true", 0, 0);
+		mqttPublish("src/" + _mqttDevice + "/udp2mqtt/alive", "true", 0, 0);
 		mqttPublish("src/" + _mqttDevice + "/system/upTime", sUpTime, 0, 0);
-		mqttPublish("src/" + _mqttDevice + "/Udp2Mqtt/device", _mqttDevice, 0, 0);
+		mqttPublish("src/" + _mqttDevice + "/udp2mqtt/device", _mqttDevice, 0, 0);
 	});
 	serialTimer.atDelta(5000).doThis([this]() {
 
@@ -312,7 +314,7 @@ typedef enum { SUBSCRIBE = 0, PUBLISH} CMD;
 
 void Udp2Mqtt::queue(UdpMsg& udpMsg) {
 	_outgoing.push_back(udpMsg);
-	if ( _outgoing.size() > 2 ) INFO("[%X] messages queued : %d",this,_outgoing.size());
+	if ( _outgoing.size() > 2 ) INFO("[%X] messages messages queued : %d",this,_outgoing.size());
 	signal(UDP_RXD);
 }
 
@@ -511,7 +513,6 @@ void Udp2Mqtt::mqttSubscribe(string topic) {
 
 void Udp2Mqtt::onConnectionLost(void* context, char* cause) {
 	Udp2Mqtt* me = (Udp2Mqtt*)context;
-	//   me->mqttDisconnect();
 	me->signal(MQTT_DISCONNECTED);
 }
 
@@ -540,6 +541,7 @@ void Udp2Mqtt::onDisconnect(void* context, MQTTAsync_successData* response) {
 
 void Udp2Mqtt::onConnectFailure(void* context, MQTTAsync_failureData* response) {
 	Udp2Mqtt* me = (Udp2Mqtt*)context;
+	WARN(" onConnectFailure : response.code : %d : %s ",response->code,response->message);
 	me->signal(MQTT_CONNECT_FAIL);
 	me->mqttConnectionState(MS_DISCONNECTED);
 }

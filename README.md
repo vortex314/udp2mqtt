@@ -1,8 +1,8 @@
 # UDP Gateway to MQTT
 ## system requirements
 - LINUX
-- Phao MQTT 
+- Paho MQTT 
 - ArduinoJson
 ## Concepts
 See serial2mqtt. 
-Udp packets contain Publish or SUbscribe commands in JSON format.
+Udp packets contain Publish or Subscribe commands in JSON format.

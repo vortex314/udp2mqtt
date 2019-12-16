@@ -78,16 +78,13 @@ int main(int argc, char **argv) {
 			receiver->init();
 			char hostName[100];
 			inet_ntop(AF_INET,&fromAddress,hostName,sizeof(hostName));
-
+			receiver->queue(udpMsg);
+			receivers.insert(std::make_pair(fromAddress,receiver));
 			auto thread  = new std::thread([=]() {
 				INFO(" starting thread for %s ",hostName);
 				receiver->run();
 			});
-			receivers.insert(std::make_pair(fromAddress,receiver));
-			receiver->queue(udpMsg);
-			SetThreadName(thread,hostName);
-
-
+			SetThreadName(thread,&hostName[4]);
 		} else {
 			got->second->queue(udpMsg);
 		}

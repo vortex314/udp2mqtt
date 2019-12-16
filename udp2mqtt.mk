@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Lieven
-Date                   :=15/12/19
+Date                   :=16/12/19
 CodeLitePath           :=/home/lieven/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/MqttUdp.cpp$(ObjectSuffix) $(IntermediateDirectory)/Timer.cpp$(ObjectSuffix) $(IntermediateDirectory)/Udp.cpp$(ObjectSuffix) $(IntermediateDirectory)/Sys.cpp$(ObjectSuffix) $(IntermediateDirectory)/Udp2Mqtt.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Udp.cpp$(ObjectSuffix) $(IntermediateDirectory)/Timer.cpp$(ObjectSuffix) $(IntermediateDirectory)/Sys.cpp$(ObjectSuffix) $(IntermediateDirectory)/Udp2Mqtt.cpp$(ObjectSuffix) 
 
 
 
@@ -99,13 +99,13 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
-$(IntermediateDirectory)/MqttUdp.cpp$(ObjectSuffix): MqttUdp.cpp $(IntermediateDirectory)/MqttUdp.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/lieven/workspace/udp2mqtt/MqttUdp.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/MqttUdp.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/MqttUdp.cpp$(DependSuffix): MqttUdp.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/MqttUdp.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/MqttUdp.cpp$(DependSuffix) -MM MqttUdp.cpp
+$(IntermediateDirectory)/Udp.cpp$(ObjectSuffix): Udp.cpp $(IntermediateDirectory)/Udp.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/lieven/workspace/udp2mqtt/Udp.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Udp.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Udp.cpp$(DependSuffix): Udp.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Udp.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Udp.cpp$(DependSuffix) -MM Udp.cpp
 
-$(IntermediateDirectory)/MqttUdp.cpp$(PreprocessSuffix): MqttUdp.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/MqttUdp.cpp$(PreprocessSuffix) MqttUdp.cpp
+$(IntermediateDirectory)/Udp.cpp$(PreprocessSuffix): Udp.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Udp.cpp$(PreprocessSuffix) Udp.cpp
 
 $(IntermediateDirectory)/Timer.cpp$(ObjectSuffix): Timer.cpp $(IntermediateDirectory)/Timer.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/lieven/workspace/udp2mqtt/Timer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Timer.cpp$(ObjectSuffix) $(IncludePath)
@@ -114,14 +114,6 @@ $(IntermediateDirectory)/Timer.cpp$(DependSuffix): Timer.cpp
 
 $(IntermediateDirectory)/Timer.cpp$(PreprocessSuffix): Timer.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Timer.cpp$(PreprocessSuffix) Timer.cpp
-
-$(IntermediateDirectory)/Udp.cpp$(ObjectSuffix): Udp.cpp $(IntermediateDirectory)/Udp.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/lieven/workspace/udp2mqtt/Udp.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Udp.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Udp.cpp$(DependSuffix): Udp.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Udp.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Udp.cpp$(DependSuffix) -MM Udp.cpp
-
-$(IntermediateDirectory)/Udp.cpp$(PreprocessSuffix): Udp.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Udp.cpp$(PreprocessSuffix) Udp.cpp
 
 $(IntermediateDirectory)/Sys.cpp$(ObjectSuffix): Sys.cpp $(IntermediateDirectory)/Sys.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/lieven/workspace/udp2mqtt/Sys.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Sys.cpp$(ObjectSuffix) $(IncludePath)
