@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <poll.h>
-#include <asm-generic/ioctls.h>
+//#include <asm-generic/ioctls.h>
 #include <sys/ioctl.h>
 #include <Timer.h>
 #include <deque>

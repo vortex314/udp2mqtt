@@ -1,6 +1,8 @@
 
 #include "Udp2Mqtt.h"
 
+// MQTT_C_CLIENT_TRACE to ON or a filename to trace
+
 const char* signalString[] = {"PIPE_ERROR",
                               "SELECT_ERROR",
                               "UDP_DISCONNECT",
@@ -74,7 +76,7 @@ void Udp2Mqtt::init()
 	_mqttSubscribedTo = "dst/" + _mqttDevice + "/#";
 	_mqttClientId = _mqttDevice;
 	INFO(" Mqtt client id : %s ", _mqttClientId.c_str());
-	std::string willTopicDefault = "src/" + _mqttDevice + "/Udp2Mqtt/alive";
+	std::string willTopicDefault = "src/" + _mqttDevice + "/udp2mqtt/alive";
 	_config.get("willTopic", _mqttWillTopic, willTopicDefault.c_str());
 
 	if(pipe(_signalFd) < 0)
@@ -92,7 +94,6 @@ void Udp2Mqtt::init()
 
 void Udp2Mqtt::run()
 {
-	string line;
 	Timer mqttConnectTimer;
 	Timer udpConnectTimer;
 	Timer mqttPublishTimer;
@@ -104,9 +105,9 @@ void Udp2Mqtt::run()
 				mqttConnect();
 			}
 	});
-	udpConnectTimer.atInterval(5000).doThis([this]()
+	udpConnectTimer.atInterval(10000).doThis([this]()
 	{
-		if ( (Sys::millis()-_lastReceived)>5000) Signal(UDP_DISCONNECT);
+		if ( (Sys::millis()-_lastReceived)>20000) signal(UDP_DISCONNECT);
 	});
 	mqttPublishTimer.atInterval(1000).doThis([this]()
 	{
@@ -123,9 +124,8 @@ void Udp2Mqtt::run()
 
 			DEBUG("signal = %s", signalString[s]);
 			mqttConnectTimer.check();
-			serialTimer.check();
 			mqttPublishTimer.check();
-			serialConnectTimer.check();
+			udpConnectTimer.check();
 			switch(s)
 				{
 				case TIMEOUT:

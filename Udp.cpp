@@ -3,12 +3,14 @@
 #include <Log.h>
 
 
-int Udp::init() {
+int Udp::init()
+{
 	struct sockaddr_in servaddr;
-	if ( (_sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) {
-		perror("socket creation failed");
-		return(errno);
-	}
+	if ( (_sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 )
+		{
+			perror("socket creation failed");
+			return(errno);
+		}
 
 	int  optval = 1;
 	setsockopt(_sockfd, SOL_SOCKET, SO_REUSEADDR,(const void *)&optval, sizeof(int));
@@ -17,14 +19,16 @@ int Udp::init() {
 	servaddr.sin_addr.s_addr = INADDR_ANY;
 	servaddr.sin_port = htons(_myPort);
 	if ( bind(_sockfd, (const struct sockaddr *)&servaddr,
-	          sizeof(servaddr)) < 0 ) {
-		perror("bind failed");
-		return(errno);
-	}
+	          sizeof(servaddr)) < 0 )
+		{
+			perror("bind failed");
+			return(errno);
+		}
 	return 0;
 }
 
-int Udp::receive(UdpMsg& rxd) {
+int Udp::receive(UdpMsg& rxd)
+{
 	struct sockaddr_in  clientaddr;
 	memset(&clientaddr, 0, sizeof(clientaddr));
 
@@ -37,19 +41,22 @@ int Udp::receive(UdpMsg& rxd) {
 	                  MSG_WAITALL, (struct sockaddr *) &clientaddr,
 	                  &len);
 
-	if ( rc >=0 ) {
-		rxd.message.clear();
-		rxd._src = clientaddr.sin_addr.s_addr;
-		rxd._srcPort = ntohs(clientaddr.sin_port);
-		char strIp[100];
-		inet_ntop(AF_INET, &(rxd._src), strIp, INET_ADDRSTRLEN);
+	if ( rc >=0 )
+		{
+			rxd.message.clear();
+			rxd._src = clientaddr.sin_addr.s_addr;
+			rxd._srcPort = ntohs(clientaddr.sin_port);
+			char strIp[100];
+			inet_ntop(AF_INET, &(rxd._src), strIp, INET_ADDRSTRLEN);
 
-		DEBUG(" received from %s:%d \n",strIp,rxd._srcPort);
-		rxd.message.append(buffer,rc);
-		return 0;
-	} else {
-		return errno;
-	}
+			DEBUG(" received from %s:%d \n",strIp,rxd._srcPort);
+			rxd.message.append(buffer,rc);
+			return 0;
+		}
+	else
+		{
+			return errno;
+		}
 }
 
 
@@ -57,14 +64,15 @@ int Udp::receive(UdpMsg& rxd) {
 
 
 // Driver code
-int Udp::send(UdpMsg& udpMsg) {
+int Udp::send(UdpMsg& udpMsg)
+{
 	struct sockaddr_in server;
 	server.sin_family = AF_INET;
 	server.sin_port = udpMsg._dstPort;
 	server.sin_addr.s_addr = udpMsg._dst;
 
 	int rc = sendto(_sockfd, udpMsg.message.c_str(), udpMsg.message.length(),
-	                MSG_CONFIRM, (const struct sockaddr *) &server,
+	                0, (const struct sockaddr *) &server,
 	                sizeof(server));
 	if ( rc < 0 ) return errno;
 	return 0;

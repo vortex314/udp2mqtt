@@ -28,7 +28,7 @@ void myLogFunction(char* s, uint32_t length)
 void SetThreadName(std::thread* thread, const char* threadName)
 {
 	auto handle = thread->native_handle();
-	pthread_setname_np(handle, threadName);
+//	pthread_setname_np(handle, threadName);
 }
 
 int main(int argc, char** argv)
@@ -80,15 +80,16 @@ int main(int argc, char** argv)
 			auto got = receivers.find(fromAddress);
 			if(got == receivers.end())
 				{
-					auto receiver = new Udp2Mqtt(udp, fromAddress, fromPort);
+					const auto receiver = new Udp2Mqtt(udp, fromAddress, fromPort);
 					receiver->setConfig(config);
 					receiver->init();
 					char hostName[100];
 					inet_ntop(AF_INET, &fromAddress, hostName, sizeof(hostName));
 					receiver->queue(udpMsg);
 					receivers.insert(std::make_pair(fromAddress, receiver));
-					auto thread = new std::thread([=]()
+					auto thread = new std::thread([=,&receivers]()
 					{
+						pthread_setname_np(&hostName[4]);
 						INFO(" starting thread for %s ", hostName);
 						receiver->run();
 						receivers.erase(fromAddress);

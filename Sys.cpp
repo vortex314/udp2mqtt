@@ -15,6 +15,31 @@ uint64_t Sys::_upTime;
 
 #include <time.h>
 #include <unistd.h>
+#define __MAC__
+#ifdef __MAC__
+#include <mach/mach_time.h>
+#define ORWL_NANO (+1.0E-9)
+#define ORWL_GIGA UINT64_C(1000000000)
+
+static double orwl_timebase = 0.0;
+static uint64_t orwl_timestart = 0;
+
+void clock_gettime(int x,struct timespec* t)
+{
+	// be more careful in a multithreaded environement
+	if (!orwl_timestart)
+		{
+			mach_timebase_info_data_t tb = { 0 };
+			mach_timebase_info(&tb);
+			orwl_timebase = tb.numer;
+			orwl_timebase /= tb.denom;
+			orwl_timestart = mach_absolute_time();
+		}
+	double diff = (mach_absolute_time() - orwl_timestart) * orwl_timebase;
+	t->tv_sec = diff * ORWL_NANO;
+	t->tv_nsec = diff - (t->tv_sec * ORWL_GIGA);
+}
+#endif
 
 uint64_t Sys::millis()   // time in msec since boot, only increasing
 {
