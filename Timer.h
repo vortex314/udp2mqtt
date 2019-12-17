@@ -21,6 +21,7 @@ public:
     Timer& atDelta(uint32_t msec);
     Timer& doThis(TimerHandler);
     void check();
+	uint64_t expiresOn();
 };
 
 #endif // TIMER_H
