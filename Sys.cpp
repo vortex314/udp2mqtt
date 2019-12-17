@@ -15,7 +15,6 @@ uint64_t Sys::_upTime;
 
 #include <time.h>
 #include <unistd.h>
-#define __MAC__
 #ifdef __MAC__
 #include <mach/mach_time.h>
 #define ORWL_NANO (+1.0E-9)
@@ -24,25 +23,22 @@ uint64_t Sys::_upTime;
 static double orwl_timebase = 0.0;
 static uint64_t orwl_timestart = 0;
 
-void clock_gettime(int x,struct timespec* t)
-{
+void clock_gettime(int x,struct timespec* t) {
 	// be more careful in a multithreaded environement
-	if (!orwl_timestart)
-		{
-			mach_timebase_info_data_t tb = { 0 };
-			mach_timebase_info(&tb);
-			orwl_timebase = tb.numer;
-			orwl_timebase /= tb.denom;
-			orwl_timestart = mach_absolute_time();
-		}
+	if (!orwl_timestart) {
+		mach_timebase_info_data_t tb = { 0 };
+		mach_timebase_info(&tb);
+		orwl_timebase = tb.numer;
+		orwl_timebase /= tb.denom;
+		orwl_timestart = mach_absolute_time();
+	}
 	double diff = (mach_absolute_time() - orwl_timestart) * orwl_timebase;
 	t->tv_sec = diff * ORWL_NANO;
 	t->tv_nsec = diff - (t->tv_sec * ORWL_GIGA);
 }
 #endif
 
-uint64_t Sys::millis()   // time in msec since boot, only increasing
-{
+uint64_t Sys::millis() { // time in msec since boot, only increasing
 	struct timespec deadline;
 	clock_gettime((int)CLOCK_MONOTONIC, &deadline);
 	Sys::_upTime= deadline.tv_sec*1000 + deadline.tv_nsec/1000000;
@@ -50,57 +46,47 @@ uint64_t Sys::millis()   // time in msec since boot, only increasing
 }
 
 
-void Sys::init()
-{
+void Sys::init() {
 	gethostname(_hostname,30);
 }
 
 
 
-void Sys::delay(uint32_t time)
-{
+void Sys::delay(uint32_t time) {
 	usleep(time*1000);
 }
 
-uint64_t Sys::now()
-{
+uint64_t Sys::now() {
 	return _boot_time+Sys::millis();
 }
 
-void Sys::setNow(uint64_t n)
-{
+void Sys::setNow(uint64_t n) {
 	_boot_time = n-Sys::millis();
 }
 
-void Sys::hostname(const char* hostname)
-{
+void Sys::hostname(const char* hostname) {
 	strncpy(_hostname, hostname,sizeof(_hostname));
 }
 
-const char* Sys::hostname()
-{
+const char* Sys::hostname() {
 	return _hostname;
 }
 
 
-uint32_t Sys::getSerialId()
-{
+uint32_t Sys::getSerialId() {
 	return 0xDEADBEEF;
 }
 
-const char* Sys::getProcessor()
-{
+const char* Sys::getProcessor() {
 	return "AMD64";
 }
-const char* Sys::getBuild()
-{
+const char* Sys::getBuild() {
 	return __DATE__ " " __TIME__;
 }
 
 
 
-uint32_t Sys::getFreeHeap()
-{
+uint32_t Sys::getFreeHeap() {
 	return 123456789;
 };
 
@@ -115,13 +101,11 @@ uint32_t Sys::sec()
 */
 
 
-void Sys::setHostname(const char *h)
-{
+void Sys::setHostname(const char *h) {
 	strncpy(_hostname, h, strlen(h) + 1);
 }
 
 
-extern "C" uint64_t SysMillis()
-{
+extern "C" uint64_t SysMillis() {
 	return Sys::millis();
 }

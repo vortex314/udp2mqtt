@@ -1,0 +1,978 @@
+lieven@pcpav2:~/workspace/udp2mqtt$ Debug/udp2mqtt 
+  udp2mqtt I | 23:07:39.359  | pcpav2 |        main.cpp:  38 | build : Dec 17 2019 21:03:41
+  udp2mqtt I | 23:07:39.359  | pcpav2 |        main.cpp:  43 |  load default config : /home/lieven/workspace/udp2mqtt/udp2mqtt.json
+  udp2mqtt I | 23:07:39.359  | pcpav2 |      Config.cpp: 264 |  config loaded : {"mqtt":{"host":"pi3.local","port":1883,"keepAliveInterval":20},"udp":{"port":1883,"protocol":"jsonArray"}}
+  udp2mqtt I | 23:07:39.649  | pcpav2 |    Udp2Mqtt.cpp:  74 |  Mqtt client id : 192.168.0.237@pcpav2 
+ 168.0.237 I | 23:07:39.649  | pcpav2 |        main.cpp:  80 |  starting thread for 192.168.0.237 
+ 168.0.237 I | 23:07:39.649  | pcpav2 |    Udp2Mqtt.cpp: 440 | [98666510] MQTT connecting tcp://pi3.local:1883 ... for 192.168.0.237@pcpav2 
+=========================================================
+                   Trace Output
+Product name: Eclipse Paho Asynchronous MQTT C Client Library
+Version: 1.3.0
+Build level: So Jan 13 10:46:24 CET 2019
+/proc/version: Linux version 4.15.0-23-generic (buildd@lgw01-amd64-055) (gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)) #25-Ubuntu SMP Wed May 23 18:02:16 UTC 2018
+
+=========================================================
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c01f970
+
+19700101 010000.000 (836142848)  (1)> Socket_outInitialize:131
+19700101 010000.000 (836142848)   (2)> SocketBuffer_initialize:94
+19700101 010000.000 Allocating 48 bytes in heap at file src/SocketBuffer.c line 81 ptr 0x7f742c01fa40
+
+19700101 010000.000 Allocating 1008 bytes in heap at file src/SocketBuffer.c line 83 ptr 0x7f742c01fb10
+
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c01ffa0
+
+19700101 010000.000 (836142848)   (2)< SocketBuffer_initialize:98
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c020070
+
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c020140
+
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c020210
+
+19700101 010000.000 (836142848)  (1)< Socket_outInitialize:144
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c0202e0
+
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c0203b0
+
+19700101 010000.000 Allocating 528 bytes in heap at file src/MQTTAsync.c line 593 ptr 0x7f742c020480
+
+19700101 010000.000 Allocating 16 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c020740
+
+19700101 010000.000 (836142848)  (1)> MQTTStrncpy:851
+19700101 010000.000 (836142848)  (1)< MQTTStrncpy:861
+19700101 010000.000 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c0207f0
+
+19700101 010000.000 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c0208c0
+
+20191217 230739.650 Allocating 176 bytes in heap at file src/MQTTAsync.c line 620 ptr 0x7f742c020980
+
+20191217 230739.650 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c020ad0
+
+20191217 230739.650 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c020ba0
+
+20191217 230739.650 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c020c70
+
+20191217 230739.650 Allocating 32 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c020d50
+
+20191217 230739.650 (836142848)  (1)> MQTTStrncpy:851
+20191217 230739.650 (836142848)  (1)< MQTTStrncpy:861
+20191217 230739.650 (836142848)  (1)> MQTTPersistence_create:52
+20191217 230739.650 (836142848)  (1)< MQTTPersistence_create:98 (0)
+20191217 230739.650 (836142848)  (1)> MQTTPersistence_initialize:113
+20191217 230739.650 (836142848)  (1)< MQTTPersistence_initialize:121 (0)
+20191217 230739.650 (836142848)  (1)> MQTTAsync_restoreCommands:1002
+20191217 230739.650 0 commands restored for client 192.168.0.237@pcpav2
+20191217 230739.650 (836142848)  (1)< MQTTAsync_restoreCommands:1040 (0)
+20191217 230739.650 (836142848)  (1)> MQTTPersistence_restoreMessageQueue:719
+20191217 230739.650 0 queued messages restored for client 192.168.0.237@pcpav2
+20191217 230739.650 (836142848)  (1)< MQTTPersistence_restoreMessageQueue:758 (0)
+20191217 230739.650 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c020e10
+
+20191217 230739.650 (836142848) (0)< MQTTAsync_createWithOptions:654 (0)
+20191217 230739.650 (836142848) (0)> MQTTAsync_setCallbacks:2500
+20191217 230739.650 (836142848) (0)< MQTTAsync_setCallbacks:2514 (0)
+20191217 230739.650 (836142848) (0)> MQTTAsync_connect:2812
+20191217 230739.650 (836142848)  (1)> Thread_start:69
+20191217 230739.650 (836142848)  (1)< Thread_start:79
+20191217 230739.650 (836142848)  (1)> Thread_start:69
+20191217 230739.650 (827750144) (0)> MQTTAsync_sendThread:1858
+20191217 230739.650 (836142848)  (1)< Thread_start:79
+20191217 230739.650 Allocating 32 bytes in heap at file src/MQTTAsync.c line 2938 ptr 0x7f742c021130
+
+20191217 230739.650 Allocating 16 bytes in heap at file src/MQTTAsync.c line 2951 ptr 0x7f742c0211f0
+
+20191217 230739.650 Allocating 48 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c0212b0
+
+20191217 230739.650 (819357440) (0)> MQTTAsync_receiveThread:2138
+20191217 230739.650 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230739.650 (819357440)   (2)> Socket_getReadySocket:237
+20191217 230739.650 (819357440)   (2)< Socket_getReadySocket:309 (0)
+20191217 230739.650 (819357440)   (2)> MQTTAsync_sleep:440
+20191217 230739.650 (827750144)  (1)> Thread_wait_cond:413
+20191217 230739.650 (836142848)  (1)> MQTTStrncpy:851
+20191217 230739.650 (836142848)  (1)< MQTTStrncpy:861
+20191217 230739.650 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3103 ptr 0x7f742c021380
+
+20191217 230739.650 (836142848)  (1)> MQTTAsync_addCommand:1050
+20191217 230739.651 Allocating 32 bytes in heap at file src/LinkedList.c line 110 ptr 0x7f742c0214c0
+
+20191217 230739.651 (836142848)   (2)> Thread_signal_cond:395
+20191217 230739.651 (836142848)   (2)< Thread_signal_cond:400 (0)
+20191217 230739.651 (836142848)  (1)< MQTTAsync_addCommand:1084 (0)
+20191217 230739.651 (836142848) (0)< MQTTAsync_connect:3119 (0)
+ 168.0.237 I | 23:07:39.651  | pcpav2 |    Udp2Mqtt.cpp: 426 | [98666510] MQTT connection state MS_DISCONNECTED => MS_CONNECTING 
+20191217 230739.651 (827750144)  (1)< Thread_wait_cond:421 (0)
+ 168.0.237 I | 23:07:39.651  | pcpav2 |    Udp2Mqtt.cpp: 130 | [98666510] UDP RXD : [1,"dst/ESP82-10027/system/loopback","true"] 
+20191217 230739.651 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230739.651 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+20191217 230739.651 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230739.651 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f7424000b70
+
+20191217 230739.651 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 2736 bytes
+
+20191217 230739.651 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2688 bytes
+
+20191217 230739.651 Connecting to serverURI pi3.local:1883 with MQTT version 4
+20191217 230739.651 (827750144)   (2)> MQTTProtocol_connect:114
+20191217 230739.651 (827750144)    (3)> MQTTProtocol_addressPort:58
+20191217 230739.651 (827750144)    (3)< MQTTProtocol_addressPort:90
+20191217 230739.651 (827750144)    (3)> Socket_new:668
+20191217 230739.651 Allocating 16 bytes in heap at file src/Socket.c line 678 ptr 0x7f7424000b50
+
+20191217 230739.651 (819357440)   (2)< MQTTAsync_sleep:446
+20191217 230739.651 New socket 6 for pi3.local:1883, port 1883
+20191217 230739.761 (827750144)     (4)> Socket_addSocket:173
+20191217 230739.761 Allocating 16 bytes in heap at file src/Socket.c line 183 ptr 0x7f7424001e70
+
+20191217 230739.761 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f7424002480
+
+20191217 230739.761 (827750144)      (5)> Socket_setnonblocking:85
+20191217 230739.761 (827750144)      (5)< Socket_setnonblocking:90 (0)
+20191217 230739.761 (827750144)     (4)< Socket_addSocket:196 (0)
+20191217 230739.761 Allocating 16 bytes in heap at file src/Socket.c line 764 ptr 0x7f7424002540
+
+20191217 230739.761 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f74240025f0
+
+20191217 230739.761 Connect pending
+20191217 230739.761 Freeing 16 bytes in heap at file src/Socket.c line 783, heap use now 2768 bytes
+
+20191217 230739.761 (827750144)    (3)< Socket_new:785 (115)
+20191217 230739.761 (827750144)   (2)< MQTTProtocol_connect:156 (115)
+20191217 230739.761 (827750144)   (2)> MQTTProperties_free:366
+20191217 230739.761 (827750144)   (2)< MQTTProperties_free:389
+20191217 230739.761 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 2752 bytes
+
+20191217 230739.761 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230739.761 (827750144)  (1)> Thread_wait_cond:413
+20191217 230739.761 (819357440)   (2)> MQTTAsync_retry:3573
+20191217 230739.761 (819357440)    (3)> MQTTProtocol_keepalive:608
+20191217 230739.761 (819357440)    (3)< MQTTProtocol_keepalive:644
+20191217 230739.762 (819357440)    (3)> MQTTProtocol_retry:730
+20191217 230739.762 (819357440)    (3)< MQTTProtocol_retry:749
+20191217 230739.762 (819357440)   (2)< MQTTAsync_retry:3583
+20191217 230739.762 (819357440)  (1)< MQTTAsync_cycle:3891 (-1)
+20191217 230739.762 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230739.762 (819357440)   (2)> Socket_getReadySocket:237
+20191217 230739.762 Return code 1 from read select
+20191217 230739.762 (819357440)    (3)> Socket_continueWrites:928
+20191217 230739.762 (819357440)    (3)< Socket_continueWrites:952 (0)
+20191217 230739.762 Return code 1 from write select
+20191217 230739.762 (819357440)    (3)> isReady:213
+20191217 230739.762 Freeing 16 bytes in heap at file src/LinkedList.c line 222, heap use now 2592 bytes
+
+20191217 230739.762 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2576 bytes
+
+20191217 230739.762 (819357440)    (3)< isReady:218 (1)
+20191217 230739.762 (819357440)   (2)< Socket_getReadySocket:309 (6)
+20191217 230739.762 m->c->connect_state = 1
+20191217 230739.762 (819357440)   (2)> MQTTAsync_connecting:3591
+20191217 230739.762 (819357440)    (3)> MQTTPacket_send_connect:55
+20191217 230739.762 Allocating 80 bytes in heap at file src/MQTTPacketOut.c line 73 ptr 0x7f7428000b20
+
+20191217 230739.762 (819357440)     (4)> MQTTPacket_send:187
+20191217 230739.857 Allocating 16 bytes in heap at file src/MQTTPacket.c line 190 ptr 0x7f7424002520
+
+20191217 230739.857 (819357440)      (5)> MQTTPacket_encode:281
+20191217 230739.857 (819357440)      (5)< MQTTPacket_encode:291 (1)
+20191217 230739.857 (819357440)      (5)> WebSocket_putdatas:782
+20191217 230739.857 (819357440)       (6)> Socket_putdatas:502
+20191217 230739.857 (819357440)        (7)> Socket_writev:426
+20191217 230739.857 (819357440)        (7)< Socket_writev:478 (82)
+20191217 230739.857 (819357440)       (6)< Socket_putdatas:550 (0)
+20191217 230739.857 (819357440)      (5)< WebSocket_putdatas:814 (0)
+20191217 230739.857 Freeing 16 bytes in heap at file src/MQTTPacket.c line 214, heap use now 2640 bytes
+
+20191217 230739.857 (819357440)     (4)< MQTTPacket_send:216 (0)
+20191217 230739.857 6 192.168.0.237@pcpav2 -> CONNECT version 4 clean: 1 (0)
+20191217 230739.857 Freeing 80 bytes in heap at file src/MQTTPacketOut.c line 125, heap use now 2624 bytes
+
+20191217 230739.857 (819357440)    (3)< MQTTPacket_send_connect:126 (0)
+20191217 230739.857 (819357440)   (2)< MQTTAsync_connecting:3730 (0)
+20191217 230739.857 (819357440)   (2)> MQTTAsync_retry:3573
+20191217 230739.857 (819357440)    (3)> MQTTProtocol_retry:730
+20191217 230739.857 (819357440)    (3)< MQTTProtocol_retry:749
+20191217 230739.857 (819357440)   (2)< MQTTAsync_retry:3583
+20191217 230739.857 (819357440)  (1)< MQTTAsync_cycle:3891 (0)
+20191217 230739.858 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230739.858 (819357440)   (2)> Socket_getReadySocket:237
+20191217 230739.858 Return code 1 from read select
+20191217 230739.858 (819357440)    (3)> Socket_continueWrites:928
+20191217 230739.858 (819357440)    (3)< Socket_continueWrites:952 (0)
+20191217 230739.858 Return code 1 from write select
+20191217 230739.858 (819357440)    (3)> isReady:213
+20191217 230739.858 (819357440)    (3)< isReady:218 (1)
+20191217 230739.858 (819357440)   (2)< Socket_getReadySocket:309 (6)
+20191217 230739.858 m->c->connect_state = 4
+20191217 230739.858 (819357440)   (2)> MQTTPacket_Factory:111
+20191217 230739.858 (819357440)    (3)> WebSocket_getch:476
+20191217 230739.858 (819357440)     (4)> Socket_getch:324
+20191217 230739.858 (819357440)      (5)> SocketBuffer_getQueuedChar:203
+20191217 230739.858 (819357440)      (5)< SocketBuffer_getQueuedChar:222 (-22)
+20191217 230739.858 (819357440)      (5)> SocketBuffer_queueChar:288
+20191217 230739.858 queueChar: index is now 1, headerlen 1
+20191217 230739.858 (819357440)      (5)< SocketBuffer_queueChar:313
+20191217 230739.858 (819357440)     (4)< Socket_getch:345 (0)
+20191217 230739.858 (819357440)    (3)< WebSocket_getch:513 (0)
+20191217 230739.879 (819357440)    (3)> MQTTPacket_decode:310
+20191217 230739.879 (819357440)     (4)> WebSocket_getch:476
+20191217 230739.879 (819357440)      (5)> Socket_getch:324
+20191217 230739.879 (819357440)       (6)> SocketBuffer_getQueuedChar:203
+20191217 230739.879 (819357440)       (6)< SocketBuffer_getQueuedChar:222 (-22)
+20191217 230739.879 (819357440)       (6)> SocketBuffer_queueChar:288
+20191217 230739.879 queueChar: index is now 2, headerlen 2
+20191217 230739.879 (819357440)       (6)< SocketBuffer_queueChar:313
+20191217 230739.879 (819357440)      (5)< Socket_getch:345 (0)
+20191217 230739.879 (819357440)     (4)< WebSocket_getch:513 (0)
+20191217 230739.879 (819357440)    (3)< MQTTPacket_decode:326 (0)
+20191217 230739.879 (819357440)    (3)> WebSocket_getdata:533
+20191217 230739.879 (819357440)     (4)> Socket_getdata:363
+20191217 230739.879 (819357440)      (5)> SocketBuffer_getQueuedData:163
+20191217 230739.879 (819357440)      (5)< SocketBuffer_getQueuedData:188
+20191217 230739.879 (819357440)      (5)> SocketBuffer_complete:263
+20191217 230739.879 (819357440)      (5)< SocketBuffer_complete:273
+20191217 230739.879 (819357440)     (4)< Socket_getdata:397
+20191217 230739.879 (819357440)    (3)< WebSocket_getdata:595 (1)
+20191217 230739.879 (819357440)    (3)> MQTTPacket_connack:145
+20191217 230739.880 Allocating 48 bytes in heap at file src/MQTTPacketOut.c line 146 ptr 0x7f742c01f9b0
+
+20191217 230739.880 (819357440)    (3)< MQTTPacket_connack:175
+20191217 230739.880 (819357440)   (2)< MQTTPacket_Factory:164 (0)
+20191217 230739.880 (819357440)   (2)> MQTTAsync_retry:3573
+20191217 230739.880 (819357440)    (3)> MQTTProtocol_retry:730
+20191217 230739.880 (819357440)    (3)< MQTTProtocol_retry:749
+20191217 230739.880 (819357440)   (2)< MQTTAsync_retry:3583
+20191217 230739.880 (819357440)  (1)< MQTTAsync_cycle:3891 (0)
+20191217 230739.880 (819357440)  (1)> MQTTAsync_completeConnection:2090
+20191217 230739.880 6 192.168.0.237@pcpav2 <- CONNACK rc: 0
+20191217 230739.880 (819357440)   (2)> MQTTAsync_cleanSession:2690
+20191217 230739.880 (819357440)    (3)> MQTTPersistence_clear:160
+20191217 230739.880 (819357440)    (3)< MQTTPersistence_clear:164 (0)
+20191217 230739.880 (819357440)    (3)> MQTTProtocol_emptyMessageList:812
+20191217 230739.880 (819357440)    (3)< MQTTProtocol_emptyMessageList:821
+20191217 230739.880 (819357440)    (3)> MQTTProtocol_emptyMessageList:812
+20191217 230739.880 (819357440)    (3)< MQTTProtocol_emptyMessageList:821
+20191217 230739.880 (819357440)    (3)> MQTTAsync_emptyMessageQueue:1894
+20191217 230739.880 (819357440)    (3)< MQTTAsync_emptyMessageQueue:1908
+20191217 230739.880 (819357440)    (3)> MQTTAsync_removeResponsesAndCommands:1918
+20191217 230739.880 0 responses removed for client 192.168.0.237@pcpav2
+20191217 230739.880 0 commands removed for client 192.168.0.237@pcpav2
+20191217 230739.880 (819357440)    (3)< MQTTAsync_removeResponsesAndCommands:2003
+20191217 230739.880 (819357440)   (2)< MQTTAsync_cleanSession:2706 (0)
+20191217 230739.880 (819357440)   (2)> Thread_signal_cond:395
+20191217 230739.880 (819357440)   (2)< Thread_signal_cond:400 (0)
+20191217 230739.880 (819357440)  (1)< MQTTAsync_completeConnection:2128 (0)
+20191217 230739.880 Calling connect success for client 192.168.0.237@pcpav2
+20191217 230739.880 (827750144)  (1)< Thread_wait_cond:421 (0)
+ 168.0.237 I | 23:07:39.880  | pcpav2 |    Udp2Mqtt.cpp: 426 | [98666510] MQTT connection state MS_CONNECTING => MS_CONNECTED 
+20191217 230739.880 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230739.880 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+ 168.0.237 I | 23:07:39.880  | pcpav2 |    Udp2Mqtt.cpp: 136 | MQTT_CONNECT_SUCCESS 192.168.0.237 
+20191217 230739.880 (827750144)  (1)> Thread_wait_cond:413
+ 168.0.237 I | 23:07:39.880  | pcpav2 |    Udp2Mqtt.cpp: 426 | [98666510] MQTT connection state MS_CONNECTED => MS_CONNECTED 
+ 168.0.237 I | 23:07:39.880  | pcpav2 |    Udp2Mqtt.cpp: 486 | Subscribing to topic dst/192.168.0.237@pcpav2/# for client 192.168.0.237 using QoS0
+20191217 230739.880 (836142848) (0)> MQTTAsync_subscribe:3364
+20191217 230739.880 (836142848)  (1)> MQTTAsync_subscribeMany:3269
+20191217 230739.880 (836142848)   (2)> UTF8_validateString:157
+20191217 230739.880 (836142848)    (3)> UTF8_validate:131
+20191217 230739.880 (836142848)    (3)< UTF8_validate:143 (1)
+20191217 230739.880 (836142848)   (2)< UTF8_validateString:159 (1)
+20191217 230739.880 (836142848)   (2)> MQTTAsync_assignMsgId:3232
+20191217 230739.880 (819357440)  (1)> MQTTPacket_freeConnack:186
+20191217 230739.880 Freeing 48 bytes in heap at file src/MQTTPacketOut.c line 189, heap use now 1600 bytes
+
+20191217 230739.880 (819357440)  (1)< MQTTPacket_freeConnack:190
+20191217 230739.880 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230739.880 (819357440)   (2)> Socket_getReadySocket:237
+20191217 230739.880 (836142848)   (2)< MQTTAsync_assignMsgId:3256 (1)
+20191217 230739.880 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3311 ptr 0x7f742c021a00
+
+20191217 230739.880 Allocating 16 bytes in heap at file src/MQTTAsync.c line 3346 ptr 0x7f742c021ad0
+
+20191217 230739.880 Allocating 16 bytes in heap at file src/MQTTAsync.c line 3347 ptr 0x7f742c021b40
+
+20191217 230739.880 Allocating 32 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c021c00
+
+20191217 230739.880 (836142848)   (2)> MQTTStrncpy:851
+20191217 230739.880 (836142848)   (2)< MQTTStrncpy:861
+20191217 230739.880 (836142848)   (2)> MQTTAsync_addCommand:1050
+20191217 230739.880 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c021cc0
+
+20191217 230739.880 (836142848)    (3)> Thread_signal_cond:395
+20191217 230739.880 (836142848)    (3)< Thread_signal_cond:400 (0)
+20191217 230739.880 (836142848)   (2)< MQTTAsync_addCommand:1084 (0)
+20191217 230739.880 (836142848)  (1)< MQTTAsync_subscribeMany:3356 (0)
+20191217 230739.880 (836142848) (0)< MQTTAsync_subscribe:3366 (0)
+ 168.0.237 I | 23:07:39.881  | pcpav2 |    Udp2Mqtt.cpp: 496 |  subscribe send : dst/192.168.0.237@pcpav2/# 
+20191217 230739.880 (827750144)  (1)< Thread_wait_cond:421 (0)
+20191217 230739.880 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230739.881 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+20191217 230739.881 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230739.881 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c021430
+
+20191217 230739.881 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 1856 bytes
+
+20191217 230739.881 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 1808 bytes
+
+20191217 230739.881 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c021cf0
+
+20191217 230739.881 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c0214f0
+
+20191217 230739.881 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c0214c0
+
+20191217 230739.881 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f7424002710
+
+20191217 230739.881 (827750144)   (2)> MQTTProtocol_subscribe:195
+20191217 230739.881 (827750144)    (3)> MQTTPacket_send_subscribe:234
+20191217 230739.881 Allocating 32 bytes in heap at file src/MQTTPacketOut.c line 246 ptr 0x7f74240027d0
+
+20191217 230739.881 (827750144)     (4)> MQTTPacket_send:187
+20191217 230739.881 Allocating 16 bytes in heap at file src/MQTTPacket.c line 190 ptr 0x7f7424002890
+
+20191217 230739.881 (827750144)      (5)> MQTTPacket_encode:281
+20191217 230739.881 (827750144)      (5)< MQTTPacket_encode:291 (1)
+20191217 230739.881 (827750144)      (5)> WebSocket_putdatas:782
+20191217 230739.881 (827750144)       (6)> Socket_putdatas:502
+20191217 230739.881 (827750144)        (7)> Socket_writev:426
+20191217 230739.881 (827750144)        (7)< Socket_writev:478 (33)
+20191217 230739.881 (827750144)       (6)< Socket_putdatas:550 (0)
+20191217 230739.881 (827750144)      (5)< WebSocket_putdatas:814 (0)
+20191217 230739.881 Freeing 16 bytes in heap at file src/MQTTPacket.c line 214, heap use now 1984 bytes
+
+20191217 230739.881 (827750144)     (4)< MQTTPacket_send:216 (0)
+20191217 230739.881 6 192.168.0.237@pcpav2 -> SUBSCRIBE msgid: 1 (0)
+20191217 230739.881 Freeing 32 bytes in heap at file src/MQTTPacketOut.c line 272, heap use now 1968 bytes
+
+20191217 230739.881 (827750144)    (3)< MQTTPacket_send_subscribe:273 (0)
+20191217 230739.881 (827750144)   (2)< MQTTProtocol_subscribe:197 (0)
+20191217 230739.881 Freeing 32 bytes in heap at file src/LinkedList.c line 396, heap use now 1936 bytes
+
+20191217 230739.881 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 1904 bytes
+
+20191217 230739.881 Freeing 32 bytes in heap at file src/LinkedList.c line 396, heap use now 1856 bytes
+
+20191217 230739.881 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 1824 bytes
+
+20191217 230739.881 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c021cc0
+
+20191217 230739.881 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230739.881 (827750144)  (1)> Thread_wait_cond:413
+20191217 230739.881 Return code 1 from read select
+20191217 230739.881 (819357440)    (3)> Socket_continueWrites:928
+20191217 230739.881 (819357440)    (3)< Socket_continueWrites:952 (0)
+20191217 230739.881 Return code 1 from write select
+20191217 230739.881 (819357440)    (3)> isReady:213
+20191217 230739.899 (819357440)    (3)< isReady:218 (1)
+20191217 230739.899 (819357440)   (2)< Socket_getReadySocket:309 (6)
+20191217 230739.899 m->c->connect_state = 0
+20191217 230739.899 (819357440)   (2)> MQTTPacket_Factory:111
+20191217 230739.899 (819357440)    (3)> WebSocket_getch:476
+20191217 230739.899 (819357440)     (4)> Socket_getch:324
+20191217 230739.899 (819357440)      (5)> SocketBuffer_getQueuedChar:203
+20191217 230739.899 (819357440)      (5)< SocketBuffer_getQueuedChar:222 (-22)
+20191217 230739.899 (819357440)      (5)> SocketBuffer_queueChar:288
+20191217 230739.899 queueChar: index is now 1, headerlen 1
+20191217 230739.899 (819357440)      (5)< SocketBuffer_queueChar:313
+20191217 230739.899 (819357440)     (4)< Socket_getch:345 (0)
+20191217 230739.899 (819357440)    (3)< WebSocket_getch:513 (0)
+20191217 230739.899 (819357440)    (3)> MQTTPacket_decode:310
+20191217 230739.899 (819357440)     (4)> WebSocket_getch:476
+20191217 230739.899 (819357440)      (5)> Socket_getch:324
+20191217 230739.899 (819357440)       (6)> SocketBuffer_getQueuedChar:203
+20191217 230739.899 (819357440)       (6)< SocketBuffer_getQueuedChar:222 (-22)
+20191217 230739.899 (819357440)       (6)> SocketBuffer_queueChar:288
+20191217 230739.899 queueChar: index is now 2, headerlen 2
+20191217 230739.899 (819357440)       (6)< SocketBuffer_queueChar:313
+20191217 230739.899 (819357440)      (5)< Socket_getch:345 (0)
+20191217 230739.899 (819357440)     (4)< WebSocket_getch:513 (0)
+20191217 230739.899 (819357440)    (3)< MQTTPacket_decode:326 (0)
+20191217 230739.899 (819357440)    (3)> WebSocket_getdata:533
+20191217 230739.899 (819357440)     (4)> Socket_getdata:363
+20191217 230739.899 (819357440)      (5)> SocketBuffer_getQueuedData:163
+20191217 230739.899 (819357440)      (5)< SocketBuffer_getQueuedData:188
+20191217 230739.899 (819357440)      (5)> SocketBuffer_complete:263
+20191217 230739.899 (819357440)      (5)< SocketBuffer_complete:273
+20191217 230739.899 (819357440)     (4)< Socket_getdata:397
+20191217 230739.899 (819357440)    (3)< WebSocket_getdata:595 (1)
+20191217 230739.899 (819357440)    (3)> MQTTPacket_suback:292
+20191217 230739.899 Allocating 48 bytes in heap at file src/MQTTPacketOut.c line 293 ptr 0x7f742c01f9b0
+
+20191217 230739.899 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f7428000b80
+
+20191217 230739.899 Allocating 16 bytes in heap at file src/MQTTPacketOut.c line 316 ptr 0x7f7428000c00
+
+20191217 230739.899 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f7428000cb0
+
+20191217 230739.899 (819357440)    (3)< MQTTPacket_suback:330
+20191217 230739.899 (819357440)   (2)< MQTTPacket_Factory:164 (0)
+20191217 230739.899 (819357440)   (2)> MQTTAsync_retry:3573
+20191217 230739.899 (819357440)    (3)> MQTTProtocol_retry:730
+20191217 230739.899 (819357440)    (3)< MQTTProtocol_retry:749
+20191217 230739.899 (819357440)   (2)< MQTTAsync_retry:3583
+20191217 230739.899 (819357440)  (1)< MQTTAsync_cycle:3891 (0)
+20191217 230739.899 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 1952 bytes
+
+20191217 230739.899 Calling subscribe success for client 192.168.0.237@pcpav2
+20191217 230739.899 Freeing 32 bytes in heap at file src/MQTTAsync.c line 1249, heap use now 1920 bytes
+
+20191217 230739.899 Freeing 16 bytes in heap at file src/MQTTAsync.c line 1251, heap use now 1888 bytes
+
+ 168.0.237 I | 23:07:39.899  | pcpav2 |    Udp2Mqtt.cpp: 151 | MQTT_SUBSCRIBE_SUCCESS 192.168.0.237 
+20191217 230739.899 Freeing 16 bytes in heap at file src/MQTTAsync.c line 1253, heap use now 1872 bytes
+
+20191217 230739.899 (819357440)  (1)> MQTTProperties_free:366
+20191217 230739.899 (819357440)  (1)< MQTTProperties_free:389
+20191217 230739.899 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 1856 bytes
+
+20191217 230739.899 (819357440)  (1)> MQTTProtocol_handleSubacks:214
+20191217 230739.899 6 192.168.0.237@pcpav2 <- SUBACK msgid: 1
+20191217 230739.899 (819357440)   (2)> MQTTPacket_freeSuback:649
+20191217 230739.899 Freeing 16 bytes in heap at file src/LinkedList.c line 364, heap use now 1696 bytes
+
+20191217 230739.899 Freeing 32 bytes in heap at file src/LinkedList.c line 368, heap use now 1680 bytes
+
+20191217 230739.899 Freeing 48 bytes in heap at file src/LinkedList.c line 382, heap use now 1648 bytes
+
+20191217 230739.899 Freeing 48 bytes in heap at file src/MQTTPacket.c line 654, heap use now 1600 bytes
+
+20191217 230739.899 (819357440)   (2)< MQTTPacket_freeSuback:655
+20191217 230739.899 (819357440)  (1)< MQTTProtocol_handleSubacks:218 (0)
+20191217 230739.899 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230739.899 (819357440)   (2)> Socket_getReadySocket:237
+  udp2mqtt I | 23:07:40.096  | pcpav2 |    Udp2Mqtt.cpp:  74 |  Mqtt client id : 192.168.0.195@pcpav2 
+ 168.0.195 I | 23:07:40.096  | pcpav2 |        main.cpp:  80 |  starting thread for 192.168.0.195 
+ 168.0.195 I | 23:07:40.096  | pcpav2 |    Udp2Mqtt.cpp: 440 | [986670D0] MQTT connecting tcp://pi3.local:1883 ... for 192.168.0.195@pcpav2 
+20191217 230739.899 (603977472) (0)> MQTTAsync_createWithOptions:540
+20191217 230739.899 (603977472)  (1)> UTF8_validateString:157
+20191217 230739.899 (603977472)   (2)> UTF8_validate:131
+20191217 230739.899 (603977472)   (2)< UTF8_validate:143 (1)
+20191217 230739.899 (603977472)  (1)< UTF8_validateString:159 (1)
+20191217 230739.899 Allocating 528 bytes in heap at file src/MQTTAsync.c line 593 ptr 0x7f741c000ba0
+
+20191217 230739.899 Allocating 16 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f741c000e60
+
+20191217 230739.899 (603977472)  (1)> MQTTStrncpy:851
+20191217 230739.899 (603977472)  (1)< MQTTStrncpy:861
+20191217 230739.899 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f741c000f10
+
+20191217 230739.899 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f741c000fe0
+
+20191217 230739.899 Allocating 176 bytes in heap at file src/MQTTAsync.c line 620 ptr 0x7f741c0010a0
+
+20191217 230739.899 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f741c0011f0
+
+20191217 230739.899 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f741c0012c0
+
+20191217 230739.899 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f741c001390
+
+20191217 230739.899 Allocating 32 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f741c001470
+
+20191217 230739.899 (603977472)  (1)> MQTTStrncpy:851
+20191217 230740.097 (603977472)  (1)< MQTTStrncpy:861
+20191217 230740.097 (603977472)  (1)> MQTTPersistence_create:52
+20191217 230740.097 (603977472)  (1)< MQTTPersistence_create:98 (0)
+20191217 230740.097 (603977472)  (1)> MQTTPersistence_initialize:113
+20191217 230740.097 (603977472)  (1)< MQTTPersistence_initialize:121 (0)
+20191217 230740.097 (603977472)  (1)> MQTTAsync_restoreCommands:1002
+20191217 230740.097 0 commands restored for client 192.168.0.195@pcpav2
+20191217 230740.097 (603977472)  (1)< MQTTAsync_restoreCommands:1040 (0)
+20191217 230740.097 (603977472)  (1)> MQTTPersistence_restoreMessageQueue:719
+20191217 230740.097 0 queued messages restored for client 192.168.0.195@pcpav2
+20191217 230740.097 (603977472)  (1)< MQTTPersistence_restoreMessageQueue:758 (0)
+20191217 230740.097 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f741c001530
+
+20191217 230740.097 (603977472) (0)< MQTTAsync_createWithOptions:654 (0)
+20191217 230740.097 (603977472) (0)> MQTTAsync_setCallbacks:2500
+20191217 230740.097 (603977472) (0)< MQTTAsync_setCallbacks:2514 (0)
+20191217 230740.097 (603977472) (0)> MQTTAsync_connect:2812
+20191217 230740.097 Allocating 32 bytes in heap at file src/MQTTAsync.c line 2938 ptr 0x7f741c0015f0
+
+20191217 230740.097 Allocating 16 bytes in heap at file src/MQTTAsync.c line 2951 ptr 0x7f741c0016b0
+
+20191217 230740.097 Allocating 16 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f741c001770
+
+20191217 230740.097 (603977472)  (1)> MQTTStrncpy:851
+20191217 230740.097 (603977472)  (1)< MQTTStrncpy:861
+20191217 230740.097 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3103 ptr 0x7f741c001820
+
+20191217 230740.097 (603977472)  (1)> MQTTAsync_addCommand:1050
+20191217 230740.097 Allocating 32 bytes in heap at file src/LinkedList.c line 110 ptr 0x7f741c001960
+
+20191217 230740.097 (603977472)   (2)> Thread_signal_cond:395
+20191217 230740.097 (603977472)   (2)< Thread_signal_cond:400 (0)
+20191217 230740.097 (603977472)  (1)< MQTTAsync_addCommand:1084 (0)
+20191217 230740.097 (603977472) (0)< MQTTAsync_connect:3119 (0)
+ 168.0.195 I | 23:07:40.097  | pcpav2 |    Udp2Mqtt.cpp: 426 | [986670D0] MQTT connection state MS_DISCONNECTED => MS_CONNECTING 
+ 168.0.195 I | 23:07:40.097  | pcpav2 |    Udp2Mqtt.cpp: 130 | [986670D0] UDP RXD : [1,"dst/ESP82-7847/system/loopback","true"] 
+20191217 230740.097 (827750144)  (1)< Thread_wait_cond:421 (0)
+20191217 230740.097 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230740.097 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+20191217 230740.097 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230740.097 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f7424002740
+
+20191217 230740.097 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 2864 bytes
+
+20191217 230740.097 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2816 bytes
+
+20191217 230740.097 Connecting to serverURI pi3.local:1883 with MQTT version 4
+20191217 230740.097 (827750144)   (2)> MQTTProtocol_connect:114
+20191217 230740.097 (827750144)    (3)> MQTTProtocol_addressPort:58
+20191217 230740.097 (827750144)    (3)< MQTTProtocol_addressPort:90
+20191217 230740.097 (827750144)    (3)> Socket_new:668
+20191217 230740.097 Allocating 16 bytes in heap at file src/Socket.c line 678 ptr 0x7f742c021ca0
+
+20191217 230740.097 New socket 9 for pi3.local:1883, port 1883
+20191217 230740.097 (827750144)     (4)> Socket_addSocket:173
+20191217 230740.097 Allocating 16 bytes in heap at file src/Socket.c line 183 ptr 0x7f74240027b0
+
+20191217 230740.097 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c0214c0
+
+20191217 230740.097 (827750144)      (5)> Socket_setnonblocking:85
+20191217 230740.097 (827750144)      (5)< Socket_setnonblocking:90 (0)
+20191217 230740.097 (827750144)     (4)< Socket_addSocket:196 (0)
+20191217 230740.097 Allocating 16 bytes in heap at file src/Socket.c line 764 ptr 0x7f74240024f0
+
+20191217 230740.097 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f7424002780
+
+20191217 230740.097 Connect pending
+20191217 230740.097 Freeing 16 bytes in heap at file src/Socket.c line 783, heap use now 2896 bytes
+
+20191217 230740.097 (827750144)    (3)< Socket_new:785 (115)
+20191217 230740.097 (827750144)   (2)< MQTTProtocol_connect:156 (115)
+20191217 230740.097 (827750144)   (2)> MQTTProperties_free:366
+20191217 230740.097 (827750144)   (2)< MQTTProperties_free:389
+20191217 230740.097 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 2880 bytes
+
+20191217 230740.097 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230740.097 (827750144)  (1)> Thread_wait_cond:413
+ 168.0.195 I | 23:07:40.098  | pcpav2 |    Udp2Mqtt.cpp: 130 | [986670D0] UDP RXD : [0,"dst/ESP82-7847/#"] 
+ 168.0.195 I | 23:07:40.100  | pcpav2 |    Udp2Mqtt.cpp: 130 | [986670D0] UDP RXD : [1,"dst/ESP82-7847/system/loopback","true"] 
+ 168.0.237 I | 23:07:40.649  | pcpav2 |    Udp2Mqtt.cpp: 130 | [98666510] UDP RXD : [1,"dst/ESP82-10027/system/loopback","true"] 
+20191217 230740.097 (836142848) (0)> MQTTAsync_sendMessage:3544
+20191217 230740.649 (836142848)  (1)> MQTTAsync_send:3475
+20191217 230740.649 (836142848)   (2)> UTF8_validateString:157
+20191217 230740.649 (836142848)    (3)> UTF8_validate:131
+20191217 230740.649 (836142848)    (3)< UTF8_validate:143 (1)
+20191217 230740.649 (836142848)   (2)< UTF8_validateString:159 (1)
+20191217 230740.649 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3507 ptr 0x7f742c021d80
+
+20191217 230740.649 Allocating 32 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c021e90
+
+20191217 230740.649 (836142848)   (2)> MQTTStrncpy:851
+20191217 230740.649 (836142848)   (2)< MQTTStrncpy:861
+20191217 230740.649 Allocating 16 bytes in heap at file src/MQTTAsync.c line 3525 ptr 0x7f742c021f50
+
+20191217 230740.649 (836142848)   (2)> MQTTAsync_addCommand:1050
+20191217 230740.649 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c022000
+
+20191217 230740.649 (836142848)    (3)> Thread_signal_cond:395
+20191217 230740.649 (836142848)    (3)< Thread_signal_cond:400 (0)
+20191217 230740.649 (836142848)   (2)< MQTTAsync_addCommand:1084 (0)
+20191217 230740.649 (836142848)  (1)< MQTTAsync_send:3532 (0)
+20191217 230740.649 (836142848) (0)< MQTTAsync_sendMessage:3563 (0)
+20191217 230740.649 (827750144)  (1)< Thread_wait_cond:421 (0)
+20191217 230740.649 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230740.649 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+20191217 230740.649 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230740.649 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f741c0018d0
+
+20191217 230740.649 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 3008 bytes
+
+20191217 230740.649 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2960 bytes
+
+20191217 230740.649 Allocating 64 bytes in heap at file src/MQTTAsync.c line 1565 ptr 0x7f7424001e00
+
+20191217 230740.649 (827750144)   (2)> MQTTProtocol_startPublish:156
+20191217 230740.649 (827750144)    (3)> MQTTProtocol_startPublishCommon:133
+20191217 230740.649 (827750144)     (4)> MQTTPacket_send_publish:800
+20191217 230740.649 Allocating 16 bytes in heap at file src/MQTTPacket.c line 801 ptr 0x7f742c021ca0
+
+20191217 230740.649 (827750144)      (5)> MQTTPacket_sends:239
+20191217 230740.649 Allocating 16 bytes in heap at file src/MQTTPacket.c line 245 ptr 0x7f7424002530
+
+20191217 230740.649 (827750144)       (6)> MQTTPacket_encode:281
+20191217 230740.649 (827750144)       (6)< MQTTPacket_encode:291 (1)
+20191217 230740.649 (827750144)       (6)> WebSocket_putdatas:782
+20191217 230740.649 (827750144)        (7)> Socket_putdatas:502
+20191217 230740.649 (827750144)         (8)> Socket_writev:426
+20191217 230740.649 (827750144)         (8)< Socket_writev:478 (39)
+20191217 230740.649 (827750144)        (7)< Socket_putdatas:550 (0)
+20191217 230740.649 (827750144)       (6)< WebSocket_putdatas:814 (0)
+20191217 230740.649 Freeing 16 bytes in heap at file src/MQTTPacket.c line 265, heap use now 3024 bytes
+
+20191217 230740.650 (827750144)      (5)< MQTTPacket_sends:266 (0)
+20191217 230740.650 Freeing 16 bytes in heap at file src/MQTTPacket.c line 838, heap use now 3008 bytes
+
+20191217 230740.650 6 192.168.0.237@pcpav2 -> PUBLISH qos: 0 retained: 0 (0)
+20191217 230740.650 (827750144)     (4)< MQTTPacket_send_publish:844 (0)
+20191217 230740.650 (827750144)    (3)< MQTTProtocol_startPublishCommon:137 (0)
+20191217 230740.650 (827750144)   (2)< MQTTProtocol_startPublish:169 (0)
+20191217 230740.650 Calling publish success for client 192.168.0.237@pcpav2
+20191217 230740.650 Freeing 64 bytes in heap at file src/MQTTAsync.c line 1619, heap use now 2992 bytes
+
+20191217 230740.650 Freeing 32 bytes in heap at file src/MQTTAsync.c line 1270, heap use now 2928 bytes
+
+20191217 230740.650 Freeing 16 bytes in heap at file src/MQTTAsync.c line 1272, heap use now 2896 bytes
+
+20191217 230740.650 (836142848) (0)> MQTTAsync_sendMessage:3544
+20191217 230740.650 (836142848)  (1)> MQTTAsync_send:3475
+20191217 230740.650 (836142848)   (2)> UTF8_validateString:157
+20191217 230740.650 (836142848)    (3)> UTF8_validate:131
+20191217 230740.650 (836142848)    (3)< UTF8_validate:143 (1)
+20191217 230740.650 (836142848)   (2)< UTF8_validateString:159 (1)
+20191217 230740.650 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3507 ptr 0x7f742c0220e0
+
+20191217 230740.650 Allocating 48 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x557398668520
+
+20191217 230740.650 (827750144)   (2)> MQTTProperties_free:366
+20191217 230740.650 (827750144)   (2)< MQTTProperties_free:389
+20191217 230740.650 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 3088 bytes
+
+20191217 230740.650 (836142848)   (2)> MQTTStrncpy:851
+20191217 230740.650 (836142848)   (2)< MQTTStrncpy:861
+20191217 230740.650 Allocating 16 bytes in heap at file src/MQTTAsync.c line 3525 ptr 0x7f742c0221f0
+
+20191217 230740.650 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230740.650 (827750144)  (1)> Thread_wait_cond:413
+20191217 230740.650 (836142848)   (2)> MQTTAsync_addCommand:1050
+20191217 230740.650 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c021d30
+
+20191217 230740.650 (836142848)    (3)> Thread_signal_cond:395
+20191217 230740.650 (836142848)    (3)< Thread_signal_cond:400 (0)
+20191217 230740.650 (836142848)   (2)< MQTTAsync_addCommand:1084 (0)
+20191217 230740.650 (836142848)  (1)< MQTTAsync_send:3532 (0)
+20191217 230740.650 (836142848) (0)< MQTTAsync_sendMessage:3563 (0)
+20191217 230740.650 (827750144)  (1)< Thread_wait_cond:421 (0)
+20191217 230740.650 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230740.650 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+20191217 230740.650 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230740.650 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c021f70
+
+20191217 230740.650 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 3024 bytes
+
+20191217 230740.650 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2976 bytes
+
+20191217 230740.651 Allocating 64 bytes in heap at file src/MQTTAsync.c line 1565 ptr 0x7f7424001e00
+
+20191217 230740.651 (836142848) (0)> MQTTAsync_sendMessage:3544
+20191217 230740.651 (836142848)  (1)> MQTTAsync_send:3475
+20191217 230740.651 (836142848)   (2)> UTF8_validateString:157
+20191217 230740.651 (836142848)    (3)> UTF8_validate:131
+20191217 230740.651 (836142848)    (3)< UTF8_validate:143 (1)
+20191217 230740.651 (836142848)   (2)< UTF8_validateString:159 (1)
+20191217 230740.651 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3507 ptr 0x7f742c0222d0
+
+20191217 230740.651 Allocating 48 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c022380
+
+20191217 230740.651 (827750144)   (2)> MQTTProtocol_startPublish:156
+20191217 230740.651 (827750144)    (3)> MQTTProtocol_startPublishCommon:133
+20191217 230740.651 (827750144)     (4)> MQTTPacket_send_publish:800
+20191217 230740.651 Allocating 16 bytes in heap at file src/MQTTPacket.c line 801 ptr 0x7f742c021f30
+
+20191217 230740.651 (836142848)   (2)> MQTTStrncpy:851
+20191217 230740.651 (836142848)   (2)< MQTTStrncpy:861
+20191217 230740.651 Allocating 16 bytes in heap at file src/MQTTAsync.c line 3525 ptr 0x7f742c022450
+
+20191217 230740.651 (827750144)      (5)> MQTTPacket_sends:239
+20191217 230740.651 Allocating 16 bytes in heap at file src/MQTTPacket.c line 245 ptr 0x7f742c021ca0
+
+20191217 230740.651 (836142848)   (2)> MQTTAsync_addCommand:1050
+20191217 230740.651 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c022500
+
+20191217 230740.651 (827750144)       (6)> MQTTPacket_encode:281
+20191217 230740.651 (827750144)       (6)< MQTTPacket_encode:291 (1)
+20191217 230740.651 (827750144)       (6)> WebSocket_putdatas:782
+20191217 230740.651 (827750144)        (7)> Socket_putdatas:502
+20191217 230740.651 (827750144)         (8)> Socket_writev:426
+20191217 230740.651 (836142848)    (3)> Thread_signal_cond:395
+20191217 230740.651 (836142848)    (3)< Thread_signal_cond:400 (0)
+20191217 230740.651 (836142848)   (2)< MQTTAsync_addCommand:1084 (0)
+20191217 230740.651 (836142848)  (1)< MQTTAsync_send:3532 (0)
+20191217 230740.651 (836142848) (0)< MQTTAsync_sendMessage:3563 (0)
+20191217 230740.651 (827750144)         (8)< Socket_writev:478 (47)
+20191217 230740.651 (827750144)        (7)< Socket_putdatas:550 (0)
+20191217 230740.651 (827750144)       (6)< WebSocket_putdatas:814 (0)
+20191217 230740.651 Freeing 16 bytes in heap at file src/MQTTPacket.c line 265, heap use now 3296 bytes
+
+20191217 230740.651 (836142848) (0)> MQTTAsync_sendMessage:3544
+20191217 230740.651 (836142848)  (1)> MQTTAsync_send:3475
+20191217 230740.651 (836142848)   (2)> UTF8_validateString:157
+20191217 230740.651 (836142848)    (3)> UTF8_validate:131
+20191217 230740.651 (836142848)    (3)< UTF8_validate:143 (1)
+20191217 230740.651 (836142848)   (2)< UTF8_validateString:159 (1)
+20191217 230740.651 Allocating 160 bytes in heap at file src/MQTTAsync.c line 3507 ptr 0x7f742c0225e0
+
+20191217 230740.651 Allocating 48 bytes in heap at file src/MQTTProtocolClient.c line 874 ptr 0x7f742c022730
+
+20191217 230740.651 (827750144)      (5)< MQTTPacket_sends:266 (0)
+20191217 230740.651 Freeing 16 bytes in heap at file src/MQTTPacket.c line 838, heap use now 3488 bytes
+
+20191217 230740.651 6 192.168.0.237@pcpav2 -> PUBLISH qos: 0 retained: 0 (0)
+20191217 230740.651 (836142848)   (2)> MQTTStrncpy:851
+20191217 230740.651 (836142848)   (2)< MQTTStrncpy:861
+20191217 230740.651 Allocating 32 bytes in heap at file src/MQTTAsync.c line 3525 ptr 0x7f742c022800
+
+20191217 230740.651 (827750144)     (4)< MQTTPacket_send_publish:844 (0)
+20191217 230740.651 (827750144)    (3)< MQTTProtocol_startPublishCommon:137 (0)
+20191217 230740.651 (827750144)   (2)< MQTTProtocol_startPublish:169 (0)
+20191217 230740.651 Calling publish success for client 192.168.0.237@pcpav2
+20191217 230740.651 (836142848)   (2)> MQTTAsync_addCommand:1050
+20191217 230740.651 Freeing 64 bytes in heap at file src/MQTTAsync.c line 1619, heap use now 3504 bytes
+
+20191217 230740.651 Freeing 48 bytes in heap at file src/MQTTAsync.c line 1270, heap use now 3440 bytes
+
+20191217 230740.651 Freeing 16 bytes in heap at file src/MQTTAsync.c line 1272, heap use now 3392 bytes
+
+20191217 230740.651 (827750144)   (2)> MQTTProperties_free:366
+20191217 230740.651 (827750144)   (2)< MQTTProperties_free:389
+20191217 230740.651 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f742c021f00
+
+20191217 230740.651 (836142848)    (3)> Thread_signal_cond:395
+20191217 230740.652 (836142848)    (3)< Thread_signal_cond:400 (0)
+20191217 230740.652 (836142848)   (2)< MQTTAsync_addCommand:1084 (0)
+20191217 230740.652 (836142848)  (1)< MQTTAsync_send:3532 (0)
+20191217 230740.652 (836142848) (0)< MQTTAsync_sendMessage:3563 (0)
+20191217 230740.652 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 3408 bytes
+
+20191217 230740.652 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230740.652 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230740.652 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c021f70
+
+20191217 230740.652 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 3296 bytes
+
+20191217 230740.652 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 3248 bytes
+
+20191217 230740.652 Allocating 64 bytes in heap at file src/MQTTAsync.c line 1565 ptr 0x7f7424001e00
+
+20191217 230740.652 (827750144)   (2)> MQTTProtocol_startPublish:156
+20191217 230740.652 (827750144)    (3)> MQTTProtocol_startPublishCommon:133
+20191217 230740.652 (827750144)     (4)> MQTTPacket_send_publish:800
+20191217 230740.652 Allocating 16 bytes in heap at file src/MQTTPacket.c line 801 ptr 0x7f742c021f50
+
+20191217 230740.652 (827750144)      (5)> MQTTPacket_sends:239
+20191217 230740.652 Allocating 16 bytes in heap at file src/MQTTPacket.c line 245 ptr 0x7f742c021fe0
+
+20191217 230740.652 (827750144)       (6)> MQTTPacket_encode:281
+20191217 230740.652 (827750144)       (6)< MQTTPacket_encode:291 (1)
+20191217 230740.652 (827750144)       (6)> WebSocket_putdatas:782
+20191217 230740.652 (827750144)        (7)> Socket_putdatas:502
+20191217 230740.652 (827750144)         (8)> Socket_writev:426
+20191217 230740.652 (827750144)         (8)< Socket_writev:478 (45)
+20191217 230740.652 (827750144)        (7)< Socket_putdatas:550 (0)
+20191217 230740.652 (827750144)       (6)< WebSocket_putdatas:814 (0)
+20191217 230740.652 Freeing 16 bytes in heap at file src/MQTTPacket.c line 265, heap use now 3312 bytes
+
+20191217 230740.652 (827750144)      (5)< MQTTPacket_sends:266 (0)
+20191217 230740.652 Freeing 16 bytes in heap at file src/MQTTPacket.c line 838, heap use now 3296 bytes
+
+20191217 230740.652 6 192.168.0.237@pcpav2 -> PUBLISH qos: 0 retained: 0 (0)
+20191217 230740.652 (827750144)     (4)< MQTTPacket_send_publish:844 (0)
+20191217 230740.652 (827750144)    (3)< MQTTProtocol_startPublishCommon:137 (0)
+20191217 230740.652 (827750144)   (2)< MQTTProtocol_startPublish:169 (0)
+20191217 230740.652 Calling publish success for client 192.168.0.237@pcpav2
+20191217 230740.652 Freeing 64 bytes in heap at file src/MQTTAsync.c line 1619, heap use now 3280 bytes
+
+20191217 230740.652 Freeing 48 bytes in heap at file src/MQTTAsync.c line 1270, heap use now 3216 bytes
+
+20191217 230740.652 Freeing 16 bytes in heap at file src/MQTTAsync.c line 1272, heap use now 3168 bytes
+
+20191217 230740.652 (827750144)   (2)> MQTTProperties_free:366
+20191217 230740.652 (827750144)   (2)< MQTTProperties_free:389
+20191217 230740.652 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 3152 bytes
+
+20191217 230740.652 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230740.652 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230740.652 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c021f70
+
+20191217 230740.652 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 3040 bytes
+
+20191217 230740.652 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2992 bytes
+
+20191217 230740.652 Allocating 64 bytes in heap at file src/MQTTAsync.c line 1565 ptr 0x7f7424001e00
+
+20191217 230740.652 (827750144)   (2)> MQTTProtocol_startPublish:156
+20191217 230740.652 (827750144)    (3)> MQTTProtocol_startPublishCommon:133
+20191217 230740.652 (827750144)     (4)> MQTTPacket_send_publish:800
+20191217 230740.652 Allocating 16 bytes in heap at file src/MQTTPacket.c line 801 ptr 0x7f742c021f30
+
+20191217 230740.652 (827750144)      (5)> MQTTPacket_sends:239
+20191217 230740.652 Allocating 16 bytes in heap at file src/MQTTPacket.c line 245 ptr 0x7f742c021ca0
+
+20191217 230740.652 (827750144)       (6)> MQTTPacket_encode:281
+20191217 230740.652 (827750144)       (6)< MQTTPacket_encode:291 (1)
+20191217 230740.652 (827750144)       (6)> WebSocket_putdatas:782
+20191217 230740.652 (827750144)        (7)> Socket_putdatas:502
+20191217 230740.652 (827750144)         (8)> Socket_writev:426
+20191217 230740.652 (827750144)         (8)< Socket_writev:478 (64)
+20191217 230740.652 (827750144)        (7)< Socket_putdatas:550 (0)
+20191217 230740.652 (827750144)       (6)< WebSocket_putdatas:814 (0)
+20191217 230740.652 Freeing 16 bytes in heap at file src/MQTTPacket.c line 265, heap use now 3056 bytes
+
+20191217 230740.653 (827750144)      (5)< MQTTPacket_sends:266 (0)
+20191217 230740.653 Freeing 16 bytes in heap at file src/MQTTPacket.c line 838, heap use now 3040 bytes
+
+20191217 230740.653 6 192.168.0.237@pcpav2 -> PUBLISH qos: 0 retained: 0 (0)
+20191217 230740.653 (827750144)     (4)< MQTTPacket_send_publish:844 (0)
+20191217 230740.653 (827750144)    (3)< MQTTProtocol_startPublishCommon:137 (0)
+20191217 230740.653 (827750144)   (2)< MQTTProtocol_startPublish:169 (0)
+20191217 230740.653 Calling publish success for client 192.168.0.237@pcpav2
+20191217 230740.653 Freeing 64 bytes in heap at file src/MQTTAsync.c line 1619, heap use now 3024 bytes
+
+20191217 230740.653 Freeing 48 bytes in heap at file src/MQTTAsync.c line 1270, heap use now 2960 bytes
+
+20191217 230740.653 Freeing 32 bytes in heap at file src/MQTTAsync.c line 1272, heap use now 2912 bytes
+
+20191217 230740.653 (827750144)   (2)> MQTTProperties_free:366
+20191217 230740.653 (827750144)   (2)< MQTTProperties_free:389
+20191217 230740.653 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 2880 bytes
+
+20191217 230740.653 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230740.653 (827750144)  (1)> Thread_wait_cond:413
+20191217 230740.653 Return code 0 from read select
+20191217 230740.653 (819357440)    (3)> Socket_continueWrites:928
+20191217 230740.653 (819357440)    (3)< Socket_continueWrites:952 (0)
+20191217 230740.653 Return code 2 from write select
+20191217 230740.653 (819357440)    (3)> isReady:213
+20191217 230740.901 (819357440)    (3)< isReady:218 (0)
+20191217 230740.901 (819357440)    (3)> isReady:213
+20191217 230740.901 Freeing 16 bytes in heap at file src/LinkedList.c line 222, heap use now 2720 bytes
+
+20191217 230740.901 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2704 bytes
+
+20191217 230740.901 (819357440)    (3)< isReady:218 (1)
+20191217 230740.901 (819357440)   (2)< Socket_getReadySocket:309 (9)
+20191217 230740.901 m->c->connect_state = 1
+20191217 230740.901 (819357440)   (2)> MQTTAsync_connecting:3591
+20191217 230740.901 (819357440)    (3)> MQTTPacket_send_connect:55
+20191217 230740.901 Allocating 48 bytes in heap at file src/MQTTPacketOut.c line 73 ptr 0x7f7428000c20
+
+20191217 230740.901 (819357440)     (4)> MQTTPacket_send:187
+20191217 230740.901 Allocating 16 bytes in heap at file src/MQTTPacket.c line 190 ptr 0x7f742c021b20
+
+20191217 230740.901 (819357440)      (5)> MQTTPacket_encode:281
+20191217 230740.901 (819357440)      (5)< MQTTPacket_encode:291 (1)
+20191217 230740.901 (819357440)      (5)> WebSocket_putdatas:782
+20191217 230740.901 (819357440)       (6)> Socket_putdatas:502
+20191217 230740.901 (819357440)        (7)> Socket_writev:426
+20191217 230740.901 (819357440)        (7)< Socket_writev:478 (43)
+20191217 230740.901 (819357440)       (6)< Socket_putdatas:550 (0)
+20191217 230740.901 (819357440)      (5)< WebSocket_putdatas:814 (0)
+20191217 230740.901 Freeing 16 bytes in heap at file src/MQTTPacket.c line 214, heap use now 2736 bytes
+
+20191217 230740.901 (819357440)     (4)< MQTTPacket_send:216 (0)
+20191217 230740.901 9 192.168.0.195@pcpav2 -> CONNECT version 4 clean: 1 (0)
+20191217 230740.901 Freeing 48 bytes in heap at file src/MQTTPacketOut.c line 125, heap use now 2720 bytes
+
+20191217 230740.901 (819357440)    (3)< MQTTPacket_send_connect:126 (0)
+20191217 230740.901 (819357440)   (2)< MQTTAsync_connecting:3730 (0)
+20191217 230740.901 (819357440)   (2)> MQTTAsync_retry:3573
+20191217 230740.901 (819357440)    (3)> MQTTProtocol_retry:730
+20191217 230740.901 (819357440)    (3)< MQTTProtocol_retry:749
+20191217 230740.901 (819357440)   (2)< MQTTAsync_retry:3583
+20191217 230740.901 (819357440)  (1)< MQTTAsync_cycle:3891 (0)
+20191217 230740.901 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230740.901 (819357440)   (2)> Socket_getReadySocket:237
+20191217 230740.901 Return code 1 from read select
+20191217 230740.901 (819357440)    (3)> Socket_continueWrites:928
+20191217 230740.901 (819357440)    (3)< Socket_continueWrites:952 (0)
+20191217 230740.901 Return code 2 from write select
+20191217 230740.901 (819357440)    (3)> isReady:213
+20191217 230740.901 (819357440)    (3)< isReady:218 (0)
+20191217 230740.901 (819357440)    (3)> isReady:213
+20191217 230740.925 (819357440)    (3)< isReady:218 (1)
+20191217 230740.925 (819357440)   (2)< Socket_getReadySocket:309 (9)
+20191217 230740.925 m->c->connect_state = 4
+20191217 230740.925 (819357440)   (2)> MQTTPacket_Factory:111
+20191217 230740.925 (819357440)    (3)> WebSocket_getch:476
+20191217 230740.925 (819357440)     (4)> Socket_getch:324
+20191217 230740.925 (819357440)      (5)> SocketBuffer_getQueuedChar:203
+20191217 230740.925 (819357440)      (5)< SocketBuffer_getQueuedChar:222 (-22)
+20191217 230740.925 (819357440)     (4)< Socket_getch:345 (-1)
+20191217 230740.925 (819357440)    (3)< WebSocket_getch:513 (-1)
+20191217 230740.925 (819357440)   (2)< MQTTPacket_Factory:164 (-1)
+20191217 230740.925 CONNECT sent but MQTTPacket_Factory has returned SOCKET_ERROR
+20191217 230740.925 (819357440)   (2)> nextOrClose:1741
+20191217 230740.925 (819357440)    (3)> MQTTAsync_checkConn:526
+20191217 230740.925 (819357440)    (3)< MQTTAsync_checkConn:529 (1)
+20191217 230740.925 (819357440)    (3)> MQTTAsync_closeOnly:2633
+20191217 230740.925 (819357440)     (4)> MQTTProtocol_checkPendingWrites:1208
+20191217 230740.925 (819357440)     (4)< MQTTProtocol_checkPendingWrites:1225
+20191217 230740.925 (819357440)     (4)> WebSocket_close:404
+20191217 230740.925 (819357440)     (4)< WebSocket_close:457
+20191217 230740.925 (819357440)     (4)> Socket_close:613
+20191217 230740.925 (819357440)      (5)> Socket_close_only:587
+20191217 230740.925 (819357440)      (5)< Socket_close_only:601 (0)
+20191217 230740.925 (819357440)      (5)> Socket_abortWrite:895
+20191217 230740.925 (819357440)      (5)< Socket_abortWrite:913 (0)
+20191217 230740.925 (819357440)      (5)> SocketBuffer_cleanup:136
+20191217 230740.925 (819357440)      (5)< SocketBuffer_cleanup:148
+20191217 230740.925 Freeing 16 bytes in heap at file src/LinkedList.c line 222, heap use now 2672 bytes
+
+20191217 230740.925 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2656 bytes
+
+20191217 230740.925 Removed socket 9
+20191217 230740.925 Reset max fdp1 to 7
+20191217 230740.925 (819357440)     (4)< Socket_close:640
+20191217 230740.925 (819357440)    (3)< MQTTAsync_closeOnly:2655
+20191217 230740.925 Allocating 160 bytes in heap at file src/MQTTAsync.c line 1749 ptr 0x7f742c021a00
+
+20191217 230740.925 Connect failed, more to try
+20191217 230740.925 (819357440)    (3)> MQTTAsync_addCommand:1050
+20191217 230740.925 Allocating 32 bytes in heap at file src/LinkedList.c line 110 ptr 0x7f742c021c00
+
+20191217 230740.925 (819357440)     (4)> Thread_signal_cond:395
+20191217 230740.925 (819357440)     (4)< Thread_signal_cond:400 (0)
+20191217 230740.925 (819357440)    (3)< MQTTAsync_addCommand:1084 (0)
+20191217 230740.926 (819357440)   (2)< nextOrClose:1794
+20191217 230740.926 (819357440)   (2)> MQTTAsync_retry:3573
+20191217 230740.926 (819357440)    (3)> MQTTProtocol_retry:730
+20191217 230740.926 (819357440)    (3)< MQTTProtocol_retry:749
+20191217 230740.926 (819357440)   (2)< MQTTAsync_retry:3583
+20191217 230740.926 (819357440)  (1)< MQTTAsync_cycle:3891 (-1)
+20191217 230740.926 Could not find client corresponding to socket 9
+20191217 230740.926 (827750144)  (1)< Thread_wait_cond:421 (0)
+20191217 230740.926 (827750144)  (1)> MQTTAsync_checkTimeouts:1804
+20191217 230740.926 (827750144)  (1)< MQTTAsync_checkTimeouts:1852
+20191217 230740.926 (827750144)  (1)> MQTTAsync_processCommand:1398
+20191217 230740.926 Allocating 48 bytes in heap at file src/LinkedList.c line 58 ptr 0x7f742c021f70
+
+20191217 230740.926 (819357440)  (1)> MQTTAsync_cycle:3740
+20191217 230740.926 (819357440)   (2)> Socket_getReadySocket:237
+20191217 230740.926 Freeing 48 bytes in heap at file src/LinkedList.c line 398, heap use now 2864 bytes
+
+20191217 230740.926 Freeing 32 bytes in heap at file src/LinkedList.c line 227, heap use now 2816 bytes
+
+20191217 230740.926 Connecting to serverURI pi3.local:1883 with MQTT version 3
+20191217 230740.926 (827750144)   (2)> MQTTProtocol_connect:114
+20191217 230740.926 (827750144)    (3)> MQTTProtocol_addressPort:58
+20191217 230740.926 (827750144)    (3)< MQTTProtocol_addressPort:90
+20191217 230740.926 (827750144)    (3)> Socket_new:668
+20191217 230740.926 Allocating 16 bytes in heap at file src/Socket.c line 678 ptr 0x7f742c021f50
+
+20191217 230740.926 New socket 9 for pi3.local:1883, port 1883
+20191217 230740.926 (827750144)     (4)> Socket_addSocket:173
+20191217 230740.926 Allocating 16 bytes in heap at file src/Socket.c line 183 ptr 0x7f742c021fe0
+
+20191217 230740.926 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f7424002530
+
+20191217 230740.926 (827750144)      (5)> Socket_setnonblocking:85
+20191217 230740.926 (827750144)      (5)< Socket_setnonblocking:90 (0)
+20191217 230740.926 (827750144)     (4)< Socket_addSocket:196 (0)
+20191217 230740.926 Allocating 16 bytes in heap at file src/Socket.c line 764 ptr 0x7f7424000b50
+
+20191217 230740.926 Allocating 32 bytes in heap at file src/LinkedList.c line 95 ptr 0x7f7424002840
+
+20191217 230740.926 Connect pending
+20191217 230740.926 Freeing 16 bytes in heap at file src/Socket.c line 783, heap use now 2896 bytes
+
+20191217 230740.926 (827750144)    (3)< Socket_new:785 (115)
+20191217 230740.926 (827750144)   (2)< MQTTProtocol_connect:156 (115)
+20191217 230740.926 (827750144)   (2)> MQTTProperties_free:366
+20191217 230740.926 (827750144)   (2)< MQTTProperties_free:389
+20191217 230740.926 Freeing 160 bytes in heap at file src/MQTTAsync.c line 1281, heap use now 2880 bytes
+
+20191217 230740.926 (827750144)  (1)< MQTTAsync_processCommand:1734 (1)
+20191217 230740.926 (827750144)  (1)> Thread_wait_cond:413
+ 168.0.195 I | 23:07:41.094  | pcpav2 |    Udp2Mqtt.cpp: 130 | [986670D0] UDP RXD : [1,"dst/ESP82-7847/system/loopback","true"] 
+^C
+lieven@pcpav2:~/workspace/udp2mqtt$ 
