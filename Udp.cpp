@@ -44,10 +44,10 @@ int Udp::receive(UdpMsg& rxd)
 	if ( rc >=0 )
 		{
 			rxd.message.clear();
-			rxd._src = clientaddr.sin_addr.s_addr;
+			rxd.srcIp = clientaddr.sin_addr.s_addr;
 			rxd._srcPort = ntohs(clientaddr.sin_port);
 			char strIp[100];
-			inet_ntop(AF_INET, &(rxd._src), strIp, INET_ADDRSTRLEN);
+			inet_ntop(AF_INET, &(rxd.srcIp), strIp, INET_ADDRSTRLEN);
 
 			DEBUG(" received from %s:%d \n",strIp,rxd._srcPort);
 			rxd.message.append(buffer,rc);
@@ -69,7 +69,7 @@ int Udp::send(UdpMsg& udpMsg)
 	struct sockaddr_in server;
 	server.sin_family = AF_INET;
 	server.sin_port = udpMsg._dstPort;
-	server.sin_addr.s_addr = udpMsg._dst;
+	server.sin_addr.s_addr = udpMsg.dstIp;
 
 	int rc = sendto(_sockfd, udpMsg.message.c_str(), udpMsg.message.length(),
 	                0, (const struct sockaddr *) &server,

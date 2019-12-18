@@ -15,33 +15,38 @@
 #define MAXLINE 1500
 
 
-class UdpMsg {
-	public:
-		in_addr_t _src;
-		in_addr_t _dst;
-		uint16_t _srcPort;
-		uint16_t _dstPort;
-		std::string message;
-		void dstIp(const char* ip) {
-			_dst = inet_addr(ip);
-		}
-		void dstPort(uint16_t port) {
-			_dstPort=htons(port);
-		}
+class UdpMsg
+{
+public:
+	in_addr_t srcIp;
+	in_addr_t dstIp;
+	uint16_t _srcPort;
+	uint16_t _dstPort;
+	std::string message;
+	void dstIpString(const char* ip)
+	{
+		dstIp = inet_addr(ip);
+	}
+	void dstPort(uint16_t port)
+	{
+		_dstPort=htons(port);
+	}
 
 } ;
 
-class Udp {
-		uint16_t _myPort=1883;
-		int _sockfd;
-		char buffer[MAXLINE];
-	public:
-		void dst(const char* );
-		void port(uint16_t port) {
-			_myPort= port;
-		}
-		int init();
-		int receive(UdpMsg& );
-		int send(UdpMsg& );
+class Udp
+{
+	uint16_t _myPort=1883;
+	int _sockfd;
+	char buffer[MAXLINE];
+public:
+	void dst(const char* );
+	void port(uint16_t port)
+	{
+		_myPort= port;
+	}
+	int init();
+	int receive(UdpMsg& );
+	int send(UdpMsg& );
 };
 #endif

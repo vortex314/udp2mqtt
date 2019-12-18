@@ -475,7 +475,7 @@ void Udp2Mqtt::udpSend(const string line)
 {
 	UdpMsg udpMsg;
 	udpMsg.dstPort(_port);
-	udpMsg._dst = _ip;
+	udpMsg.dstIp = _ip;
 	udpMsg.message = line;
 	int erc = _udp.send(udpMsg);
 	if(erc < 0)

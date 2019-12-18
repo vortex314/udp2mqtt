@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 		{
 			UdpMsg udpMsg;
 			udp.receive(udpMsg);
-			in_addr_t fromAddress = udpMsg._src;
+			in_addr_t fromAddress = udpMsg.srcIp;
 			uint16_t fromPort = udpMsg._srcPort;
 			auto got = receivers.find(fromAddress);
 			if(got == receivers.end())
