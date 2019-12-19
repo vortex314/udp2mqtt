@@ -1,6 +1,6 @@
 {
 "mqtt":{
-	"host":"pi3.local",
+	"host":"localhost",
 	"port":1883,
 	"keepAliveInterval":20
 	},

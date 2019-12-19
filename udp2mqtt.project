@@ -45,9 +45,9 @@
         <IncludePath Value="../ArduinoJson/src"/>
         <IncludePath Value="../paho.mqtt.c/src"/>
       </Compiler>
-      <Linker Options="-l:libpaho-mqtt3c.a" Required="yes">
+      <Linker Options="-l:libpaho-mqtt3a.a" Required="yes">
         <LibraryPath Value="../Common/Debug"/>
-        <LibraryPath Value="../paho.mqtt.c/build/output"/>
+        <LibraryPath Value="../paho.mqtt.c/build.paho/src"/>
         <Library Value="Common"/>
         <Library Value="pthread"/>
       </Linker>
