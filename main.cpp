@@ -57,7 +57,13 @@ int main(int argc, char** argv) {
 	config.setNameSpace("udp");
 	uint32_t udpPort = config.root()["udp"]["port"] | 1883;
 	std::unordered_map<in_addr_t, Udp2Mqtt*> receivers;
-
+#ifdef GPROF
+// exit after 200 sec to generate gmon.out for gprof profiling
+new std::thread([=]() {
+		sleep(200);
+		exit(0);
+			});
+#endif
 	Udp udp;
 	udp.port(udpPort);
 	udp.init();
@@ -88,14 +94,6 @@ int main(int argc, char** argv) {
 			got->second->queue(udpMsg);
 		}
 	}
-
-	/*
-	        for(uint32_t i=0; i<ports.size(); i++) {
-	                threads[i] =
-	                std::string port= ports[i];
-	                SetThreadName(&threads[i],port.substr(8).c_str());
-	        }
-	*/
 }
 
 void overrideConfig(Config& config, int argc, char** argv) {

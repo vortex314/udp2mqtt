@@ -134,7 +134,7 @@ void Udp2Mqtt::run() {
 				}
 			case UDP_RXD: {
 					DEBUG("UDP_RXD");
-					if(_outgoing.size()) {
+					while(_outgoing.size()) {
 						auto udpMsg = _outgoing.front();
 						_outgoing.pop_front();
 						udpHandleMessage(udpMsg);
