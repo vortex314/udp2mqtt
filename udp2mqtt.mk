@@ -35,13 +35,13 @@ PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="udp2mqtt.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
-LinkOptions            :=  -l:libpaho-mqtt3a.a
+LinkOptions            :=  -l:libpaho-mqtt3c.a
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)../Common $(IncludeSwitch)../ArduinoJson/src $(IncludeSwitch)../paho.mqtt.c/src 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := $(LibrarySwitch)Common $(LibrarySwitch)pthread 
 ArLibs                 :=  "Common" "pthread" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)../Common/Debug $(LibraryPathSwitch)../paho.mqtt.c/build.paho/src 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)../Common/Debug $(LibraryPathSwitch)../paho.mqtt.c/build/output
 
 ##
 ## Common variables

@@ -404,7 +404,7 @@ void Udp2Mqtt::udpPublish(string topic, Bytes message, int qos, bool retained) {
 		WARN(" invalid protocol found.");
 	}
 	udpSend(line);
-	INFO(" TXD %s : %s ", _ipAsString.c_str(), line.c_str());
+	DEBUG(" TXD %s : %s ", _ipAsString.c_str(), line.c_str());
 }
 
 void Udp2Mqtt::udpSend(const string line) {
@@ -506,7 +506,7 @@ void Udp2Mqtt::onConnectionLost(void* context, char* cause) {
 }
 
 int Udp2Mqtt::onMessage(void* context, char* topicName, int topicLen, MQTTAsync_message* message) {
-	INFO(" MQTT RXD %s ", topicName);
+	DEBUG(" MQTT RXD %s ", topicName);
 	Udp2Mqtt* me = (Udp2Mqtt*)context;
 	Bytes msg((uint8_t*)message->payload, message->payloadlen);
 	string topic(topicName, topicLen);
