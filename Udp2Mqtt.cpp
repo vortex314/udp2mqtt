@@ -135,8 +135,10 @@ void Udp2Mqtt::run() {
 			case UDP_RXD: {
 					DEBUG("UDP_RXD");
 					while(_outgoing.size()) {
+							_mtxlock.lock();
 						auto udpMsg = _outgoing.front();
 						_outgoing.pop_front();
+							_mtxlock.unlock();
 						udpHandleMessage(udpMsg);
 					}
 					break;
@@ -303,8 +305,10 @@ std::vector<string> split(const string& text, char sep) {
 typedef enum { SUBSCRIBE = 0, PUBLISH } CMD;
 
 void Udp2Mqtt::queue(UdpMsg& udpMsg) {
+	_mtxlock.lock();
 	_outgoing.push_back(udpMsg);
 	_lastReceived = Sys::millis();
+	_mtxlock.unlock();
 	if(_outgoing.size() > 2) INFO("[%X] messages messages queued : %d", this, _outgoing.size());
 	signal(UDP_RXD);
 }
@@ -562,7 +566,6 @@ void Udp2Mqtt::mqttPublish(string topic, Bytes message, int qos, bool retained) 
 	if(!(_mqttConnectionState == MS_CONNECTED)) {
 		return;
 	}
-	qos = 1;
 	MQTTAsync_responseOptions opts = MQTTAsync_responseOptions_initializer;
 	MQTTAsync_message pubmsg = MQTTAsync_message_initializer;
 

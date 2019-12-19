@@ -18,6 +18,7 @@
 #include <sys/ioctl.h>
 #include <Timer.h>
 #include <deque>
+#include <mutex>
 
 using namespace std;
 
@@ -56,6 +57,7 @@ class Udp2Mqtt
 	string _mqttProgrammerTopic;
 	uint64_t _startTime;
 	std::deque<UdpMsg> _outgoing;
+	std::mutex _mtxlock;
 
 //	bool _mqttConnected=false;
 	string _mqttSubscribedTo;
